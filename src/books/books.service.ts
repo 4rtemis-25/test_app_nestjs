@@ -72,6 +72,6 @@ export class BooksService {
         }
 
         const updateBook = Object.assign(bookFound, book)
-        return this.bookRepository.update({id}, book)
+        return this.bookRepository.save(updateBook)
     }
 }
