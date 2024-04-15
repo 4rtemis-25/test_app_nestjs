@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
   imports: [
+    // CREDENCIALES DE LA BD CON TYPEORM
     TypeOrmModule.forRoot(
       {
        type: 'mysql',

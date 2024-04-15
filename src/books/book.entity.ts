@@ -1,5 +1,7 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
+// CONFIGURACION DE LA TABLA BOOKS
+
 @Entity({name: 'books'})
 export class Book {
 
