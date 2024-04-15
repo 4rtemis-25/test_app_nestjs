@@ -14,12 +14,12 @@ export class BooksController {
   }
 
   @Get(':id')
-  getOneBook(@Param('id', ParseIntPipe) id:number): Promise<Book>{
+  getOneBook(@Param('id', ParseIntPipe) id:number){
     return this.booksService.getBookById(id)
   }
 
   @Post()
-  createBook(@Body() newBook: CreateBook): Promise<Book>{
+  createBook(@Body() newBook: CreateBook){
     return this.booksService.createBook(newBook)
   }
 
