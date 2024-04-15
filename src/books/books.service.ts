@@ -23,14 +23,21 @@ export class BooksService {
         if(bookFound){
             return new HttpException('Book already exist', HttpStatus.BAD_REQUEST)
         }
+        
+        const newBook = this.bookRepository.create(book)        
 
-        const newBook = this.bookRepository.create(book)
+        if(newBook.categoryId === 0 || newBook.categoryId === null || newBook.categoryId === undefined){
+            return new HttpException('Category not entered', HttpStatus.BAD_REQUEST)
+        }
+
         return this.bookRepository.save(newBook)
     }
 
     // GET ALL BOOKS
     getAllBooks(){
-        return this.bookRepository.find()
+        return this.bookRepository.find({
+            relations: ['category']
+        })
     }
 
     // GET ONE BOOK

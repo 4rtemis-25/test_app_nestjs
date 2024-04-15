@@ -5,4 +5,5 @@ export class UpdateBook {
     author?: string
     pubDate?: Date
     inStock?: boolean
+    categoryId?: number 
 }

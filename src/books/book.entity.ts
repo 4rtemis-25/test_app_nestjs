@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Category } from "src/categories/category.entity";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 // CONFIGURACION DE LA TABLA BOOKS
 
@@ -25,4 +26,10 @@ export class Book {
 
     @Column()
     inStock: boolean
+
+    @Column()
+    categoryId: number
+
+    @ManyToOne(() => Category, category => category.book)
+    category: Category
 }
