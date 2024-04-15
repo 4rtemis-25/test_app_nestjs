@@ -5,5 +5,4 @@ export class CreateBook {
     author: string
     pubDate: Date
     inStock: boolean
-
 }
